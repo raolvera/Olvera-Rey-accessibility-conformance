@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility Practice Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Updated added a skip to main content link so keyboard users can jump past the header (Issue 3) -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="brand">Community Tech Day</div>
+    <nav>
+      <a href="#sessions">Sessions</a>
+      <a href="#register">Register</a>
+      <a href="#schedule">Schedule</a>
+    </nav>
+  </header>
+
+  <!-- Updated added id="main" so the skip link has a target (Issue 3) -->
+  <main id="main">
+    <section class="hero">
+      <h1>Community Tech Day</h1>
+      <h3>Free workshops for neighbors learning practical web skills.</h3>
+      <p>Practice auditing this page for structure, keyboard access, forms, tables, media alternatives, and motion.</p>
+      <a class="button-like" href="#register">Start</a>
+    </section>
+
+    <section id="sessions" class="section">
+      <h2>Featured sessions</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="workshop.svg" alt="poster">
+          <h3>Safer Passwords</h3>
+          <p>Learn password manager basics and account recovery planning.</p>
+          <a href="#">More</a>
+        </article>
+        <article class="card">
+          <img src="workshop.svg" alt="">
+          <h3>Accessible Forms</h3>
+          <p>Review labels, instructions, errors, and keyboard-friendly controls.</p>
+          <a href="#">More</a>
+        </article>
+        <article class="card animated-card">
+          <img src="workshop.svg" alt="People attending a workshop">
+          <h3>Responsive Layouts</h3>
+          <p>Test layouts at zoom, narrow widths, and different content lengths.</p>
+          <a href="#">More</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="register" class="section">
+      <h2>Register interest</h2>
+      <form>
+        <p>Fields marked with an asterisk are required.</p>
+        <div class="field">
+          <!-- Updated changed the span to a real label linked to the input with for and id, and marked it required (Issue 2) -->
+          <label for="name">Name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" required aria-required="true" autocomplete="name">
+        </div>
+        <div class="field">
+          <!-- Updated added for on the label so it links to the input id, and marked it required (Issue 2) -->
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" required aria-required="true" autocomplete="email">
+        </div>
+        <!-- Updated added text inside the button, it used to be empty (Issue 1) -->
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="schedule" class="section">
+      <h2>Workshop schedule</h2>
+      <table>
+        <tr>
+          <td>Time</td>
+          <td>Session</td>
+          <td>Room</td>
+        </tr>
+        <tr>
+          <td>9:00 AM</td>
+          <td>Safer Passwords</td>
+          <td>Lab A</td>
+        </tr>
+        <tr>
+          <td>10:30 AM</td>
+          <td>Accessible Forms</td>
+          <td>Lab B</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
